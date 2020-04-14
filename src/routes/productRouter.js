@@ -5,7 +5,7 @@ const routes = new Router();
 
 routes.get('/products', ProductController.index);
 
-// routes.get('/products/:filter', ProductController.show);
+routes.get('/products/:filter', ProductController.show);
 
 routes.post('/products', ProductController.store);
 

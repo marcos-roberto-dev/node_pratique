@@ -1,26 +1,20 @@
-const express = require("express");
-const userRouter = require("./routes/userRouter");
-const productRouter = require("./routes/productRouter");
+const express = require('express');
+const userRoutes = require('./routes/userRoutes');
 
 class App {
-  constructor() {
+  constructor(){
     this.server = express();
     this.middlewares();
     this.routes();
   }
 
-  middlewares() {
+  middlewares(){
     this.server.use(express.json());
   }
 
-  routes() {
-    this.server.use([
-      userRouter, 
-      productRouter
-    ]);
+  routes(){
+    this.server.use(userRoutes);
   }
 }
-
-
 
 module.exports = new App().server;

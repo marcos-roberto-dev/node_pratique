@@ -1,5 +1,7 @@
 const server = require('./App');
+const port = 4000
+require('./database');
 
-server.listen(3444, () => {
-  console.log('Servidor On')
-});
+server.listen(port, () => {
+  console.log('Server On PORT: ', port );
+})
