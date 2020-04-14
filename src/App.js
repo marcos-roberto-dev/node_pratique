@@ -1,5 +1,6 @@
 const express = require("express");
-const routes = require("./routes");
+const userRouter = require("./routes/userRouter");
+const productRouter = require("./routes/productRouter");
 
 class App {
   constructor() {
@@ -13,7 +14,10 @@ class App {
   }
 
   routes() {
-    this.server.use(routes);
+    this.server.use([
+      userRouter, 
+      productRouter
+    ]);
   }
 }
 
