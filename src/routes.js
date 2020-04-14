@@ -3,11 +3,11 @@ const UserController = require('./controllers/UserController');
 
 const routes = new Router();
 
-routes.get('/', UserController.show);
+routes.get('/users', UserController.index);
 
-routes.post('/', UserController.index);
+routes.get('/users/:filter', UserController.show);
 
-routes.post('/users', UserController.create);
+routes.post('/users', UserController.store);
 
 routes.put('/users/:id', UserController.update);
 
